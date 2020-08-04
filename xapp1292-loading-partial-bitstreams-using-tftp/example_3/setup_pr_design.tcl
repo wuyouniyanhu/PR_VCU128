@@ -49,7 +49,7 @@ set_attribute module $static vlog          [list    \
                                             ]
 set_attribute module $static vhdl          [list                                  \
                                             Sources/hdl/top/top.vhd       work    \
-                                            project/project.srcs/sources_1/bd/static_bd/hdl/static_bd.vhd work \
+                                            project/project.srcs/sources_1/bd/static_bd/synth/static_bd.vhd work \
                                             project/project.srcs/sources_1/bd/static_bd/hdl/static_bd_wrapper.vhd work \
                                             ]
 

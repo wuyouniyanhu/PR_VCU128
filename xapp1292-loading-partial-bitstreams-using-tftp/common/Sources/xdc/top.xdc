@@ -25,46 +25,56 @@
 #-----------------------------------
 # ICAPE2 constraints
 #-----------------------------------
-set icap_clock       [get_clocks -of_objects [get_ports ICAPE2_inst/CLK]]
+# set icap_clock       [get_clocks -of_objects [get_ports ICAPE2_inst/CLK]]
+set icap_clock       [get_clocks -of_objects [get_ports ICAPE3_inst/CLK]]
+
+
+#-----------------------------------
+# ICAPE3 constraints
+#-----------------------------------
+set_property PACKAGE_PIN BM29 [get_ports reset]
+set_property IOSTANDARD LVCMOS12 [get_ports reset]
+
 
 #-----------------------------------
 # LED LOCs
 #-----------------------------------
 #    LED[0-3] shift
 #    LED[4-7] count
-#-----------------------------------
+#-----------------------------------VCU128 LEDs :
 #LED0
-set_property PACKAGE_PIN AB8     [get_ports shift_out[0]]
-set_property IOSTANDARD LVCMOS15 [get_ports shift_out[0]]
+set_property PACKAGE_PIN BH24     [get_ports shift_out[0]]
+set_property IOSTANDARD LVCMOS18 [get_ports shift_out[0]]
 
 # LED1
-set_property PACKAGE_PIN AA8     [get_ports shift_out[1]]
-set_property IOSTANDARD LVCMOS15 [get_ports shift_out[1]]
+set_property PACKAGE_PIN BG24     [get_ports shift_out[1]]
+set_property IOSTANDARD LVCMOS18 [get_ports shift_out[1]]
 
 # LED2
-set_property PACKAGE_PIN AC9     [get_ports shift_out[2]]
-set_property IOSTANDARD LVCMOS15 [get_ports shift_out[2]]
+set_property PACKAGE_PIN BG25     [get_ports shift_out[2]]
+set_property IOSTANDARD LVCMOS18 [get_ports shift_out[2]]
 
 # LED3
-set_property PACKAGE_PIN AB9     [get_ports shift_out[3]]
-set_property IOSTANDARD LVCMOS15 [get_ports shift_out[3]]
+set_property PACKAGE_PIN BF25     [get_ports shift_out[3]]
+set_property IOSTANDARD LVCMOS18 [get_ports shift_out[3]]
 
 # LED4
-set_property PACKAGE_PIN AE26    [get_ports count_out[0]]
-set_property IOSTANDARD LVCMOS25 [get_ports count_out[0]]
+set_property PACKAGE_PIN BF26    [get_ports count_out[0]]
+set_property IOSTANDARD LVCMOS18 [get_ports count_out[0]]
 
 # LED5
-set_property PACKAGE_PIN G19     [get_ports count_out[1]]
-set_property IOSTANDARD LVCMOS25 [get_ports count_out[1]]
+set_property PACKAGE_PIN BF27     [get_ports count_out[1]]
+set_property IOSTANDARD LVCMOS18 [get_ports count_out[1]]
 
 # LED6
-set_property PACKAGE_PIN E18     [get_ports count_out[2]]
-set_property IOSTANDARD LVCMOS25 [get_ports count_out[2]]
+set_property PACKAGE_PIN BG27     [get_ports count_out[2]]
+set_property IOSTANDARD LVCMOS18 [get_ports count_out[2]]
 
 # LED7
-set_property PACKAGE_PIN F16     [get_ports count_out[3]]
-set_property IOSTANDARD LVCMOS25 [get_ports count_out[3]]
+set_property PACKAGE_PIN BG28     [get_ports count_out[3]]
+set_property IOSTANDARD LVCMOS18 [get_ports count_out[3]]
 
+#################################################################################
 
 #-------------------------------------------------
 # pblock_count 

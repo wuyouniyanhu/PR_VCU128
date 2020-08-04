@@ -43,18 +43,14 @@ if { [string first $scripts_vivado_version $current_vivado_version] == -1 } {
 
 set list_projs [get_projects -quiet]
 if { $list_projs eq "" } {
-  #  2020-8-1 QiLe
-  #  create_project project_1 myproj -part xcvu37p-fsvh2892-2L-e
-   create_project project ./project -part xcvu37p-fsvh2892-2L-e -force
-
+   create_project project_1 myproj -part xcvu37p-fsvh2892-2L-e
    set_property BOARD_PART xilinx.com:vcu128:part0:1.0 [current_project]
 }
 
-# 2020-8-1 QiLe
-set_property target_language VHDL [current_project]
+
 # CHANGE DESIGN NAME HERE
 variable design_name
-set design_name static_bd
+set design_name design_1
 
 # If you do not already have an existing IP Integrator design open,
 # you can create a design using the following command:
@@ -697,9 +693,3 @@ create_root_design ""
 
 common::send_msg_id "BD_TCL-1000" "WARNING" "This Tcl script was generated from a block design that has not been validated. It is possible that design <$design_name> may result in errors during validation."
 
-# 2020-8-1 QiLe
-open_bd_design {./project/project.srcs/sources_1/bd/static_bd/static_bd.bd}
-
-validate_bd_design 
-set_property synth_checkpoint_mode None [get_files ./project/project.srcs/sources_1/bd/static_bd/static_bd.bd] 
-generate_target all [get_files  ./project/project.srcs/sources_1/bd/static_bd/static_bd.bd]
